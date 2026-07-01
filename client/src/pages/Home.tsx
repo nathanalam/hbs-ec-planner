@@ -138,7 +138,7 @@ export default function Home() {
         </div>
 
         {/* Archetype list */}
-        <ScrollArea className="flex-1 py-2">
+        <ScrollArea className="flex-1 overflow-auto py-2">
           <div className="px-2 space-y-0.5">
             {sidebarOpen && (
               <p className="px-2 py-1.5 text-[10px] font-semibold text-muted-foreground/50 uppercase tracking-widest">
@@ -268,7 +268,7 @@ export default function Home() {
         </div>
 
         {/* Content area */}
-        <ScrollArea className="flex-1">
+        <ScrollArea className="flex-1 overflow-auto">
           <div className="p-6">
             {/* Instructions */}
             <div className="flex items-start gap-2 mb-6 p-3 rounded-lg border border-white/5 bg-white/[0.02]">
