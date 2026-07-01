@@ -73,9 +73,22 @@ export function CourseTable({ courses, enrolled, onToggle, semester }: CourseTab
                   )}>
                     {categoryLabel[course.category]}
                   </span>
-                  <span className="text-[11px] font-mono text-muted-foreground/70">
-                    {course.code}
-                  </span>
+                  {course.school === "HBS" ? (
+                    <a
+                      href={`https://coursecatalog.mba.hbs.edu/?details&srcdb=${
+                        semester === "spring" ? "792154" : "792148"
+                      }&code=${encodeURIComponent(course.code)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[11px] font-mono text-muted-foreground/70 hover:text-foreground hover:underline transition-colors"
+                    >
+                      {course.code}
+                    </a>
+                  ) : (
+                    <span className="text-[11px] font-mono text-muted-foreground/70">
+                      {course.code}
+                    </span>
+                  )}
                 </div>
                 <div className="flex items-center gap-2 shrink-0">
                   {isDropCandidate && isEnrolled && (
